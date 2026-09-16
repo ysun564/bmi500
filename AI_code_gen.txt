@@ -12,28 +12,41 @@ LLM / tool used
 Prompts supplied by the user
 ----------------------------
 
+The prompts originally submitted in Chinese are translated into English below
+so that the repository contains English text only.
+
 Prompt 1:
 
-把我的项目下载到bmi hw3的文件夹[https://github.com/ysun564/bmi500](https://github.com/ysun564/bmi500)
-1. 根据 `matvec_multiply.py` 中的注释实现函数。
-2. 可以手写，也可以使用 LLM/coding assistant。
-3. 在 `matvec_test.py` 中编写测试。
-4. 分析可能的 failure modes，并在代码中加入防护，例如：
-   - 向量与矩阵维度不匹配
-   - 输入不是二维矩阵或一维向量
-   - 空输入
-   - 非数值输入
-   - 不规则嵌套列表
-5. 在 `AI_code_gen.txt` 中记录：
-   - 使用的 LLM/工具
-   - 模型版本
-   - 所有 prompts
-   - 相关对话或输出
-6. commit 并 push 到你 fork 的仓库。
+Download my project into the BMI HW3 folder:
+https://github.com/ysun564/bmi500
+
+1. Implement the functions according to the comments in `matvec_multiply.py`.
+2. The code may be written manually or with an LLM/coding assistant.
+3. Write tests in `matvec_test.py`.
+4. Analyze possible failure modes and add safeguards to the code, including:
+   - mismatched matrix and vector dimensions
+   - inputs that are not a two-dimensional matrix or one-dimensional vector
+   - empty inputs
+   - non-numeric inputs
+   - irregular nested lists
+5. Record the following in `AI_code_gen.txt`:
+   - the LLM/tool used
+   - the model version
+   - all prompts
+   - relevant conversation or output
+6. Commit and push to your forked repository.
 
 Prompt 2:
 
-可以
+Okay.
+
+Prompt 3:
+
+Can you change the Chinese text on GitHub to English?
+
+Prompt 4:
+
+Okay.
 
 Relevant conversation and output
 --------------------------------
@@ -42,7 +55,10 @@ Codex inspected the repository and noted that its existing test skeleton is
 named `matvec_tests.py` (plural). Codex proposed preserving and completing that
 file, implementing the functions with plain Python loops, adding validation,
 using test-driven development, documenting the AI interaction, and pushing to
-the repository's `main` branch. The user approved that design with "可以".
+the repository's `main` branch. The user approved that design.
+
+The user later requested that all Chinese text in the GitHub repository be
+changed to English and approved translating the prompt record.
 
 TDD RED result before implementation:
 
