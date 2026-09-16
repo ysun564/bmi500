@@ -1,0 +1,71 @@
+AI-Assisted Code Generation Record
+==================================
+
+Date: 2026-09-16
+
+LLM / tool used
+-----------------
+- Tool: OpenAI Codex desktop coding assistant
+- Model: GPT-5 (Codex; the exact internal build identifier is not exposed)
+- Supporting tools: PowerShell, Git, Python 3.9 standard-library unittest
+
+Prompts supplied by the user
+----------------------------
+
+Prompt 1:
+
+把我的项目下载到bmi hw3的文件夹[https://github.com/ysun564/bmi500](https://github.com/ysun564/bmi500)
+1. 根据 `matvec_multiply.py` 中的注释实现函数。
+2. 可以手写，也可以使用 LLM/coding assistant。
+3. 在 `matvec_test.py` 中编写测试。
+4. 分析可能的 failure modes，并在代码中加入防护，例如：
+   - 向量与矩阵维度不匹配
+   - 输入不是二维矩阵或一维向量
+   - 空输入
+   - 非数值输入
+   - 不规则嵌套列表
+5. 在 `AI_code_gen.txt` 中记录：
+   - 使用的 LLM/工具
+   - 模型版本
+   - 所有 prompts
+   - 相关对话或输出
+6. commit 并 push 到你 fork 的仓库。
+
+Prompt 2:
+
+可以
+
+Relevant conversation and output
+--------------------------------
+
+Codex inspected the repository and noted that its existing test skeleton is
+named `matvec_tests.py` (plural). Codex proposed preserving and completing that
+file, implementing the functions with plain Python loops, adding validation,
+using test-driven development, documenting the AI interaction, and pushing to
+the repository's `main` branch. The user approved that design with "可以".
+
+TDD RED result before implementation:
+
+    Ran 14 tests in 0.004s
+    FAILED (errors=14)
+
+All failures were the expected AttributeError errors because `dot_product` and
+`matrix_vector_product` had not yet been implemented. A separate test for the
+required `main` function also failed with the expected AttributeError before
+that function was implemented.
+
+TDD GREEN result after implementation:
+
+    Ran 15 tests in 0.004s
+    OK
+
+Generated work
+--------------
+- Implemented `dot_product` with a for loop.
+- Implemented `matrix_vector_product` using `dot_product`.
+- Implemented `main`, which defaults to random 1000 x 1000 input data.
+- Added validation for empty inputs, invalid dimensions, dimension mismatch,
+  non-numeric values, and irregular matrix rows.
+- Added 15 standard-library unit tests covering the implementation and guards.
+
+No source code from another website or repository was copied into the solution.
